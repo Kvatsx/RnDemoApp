@@ -1,0 +1,12 @@
+{
+  "name": "RnDemoApp",
+  "displayName": "RnDemoApp",
+  "expo": {
+    "name": "RnDemoApp",
+    "slug": "RnDemoApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
