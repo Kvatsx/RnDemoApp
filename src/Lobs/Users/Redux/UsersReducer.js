@@ -1,15 +1,38 @@
-import {STATE_LOADING} from '../UsersConstants';
+import {LOADING, ERROR, SUCCESS} from '../UsersConstants';
 
 const initialState = {
-  UsersDto: "Data"
+  users: [],
+  meta: {},
+  isLoading: false,
+  isError: false,
+  isSuccess: false
 };
 
 const UsersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case STATE_LOADING: 
+    case LOADING: 
       return {
         ...state,
-      }
+        isLoading: true,
+        isSuccess: false,
+        isError: false
+      };
+    case ERROR: 
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        isSuccess: false
+      };
+    case SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        isSuccess: true,
+        users: action.users,
+        meta: action.meta
+      };
     default: return state
   }
 }
