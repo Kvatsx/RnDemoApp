@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import UsersLanding from '../Components/UsersLanding';
 
 const mapStateToProps = state => ({
-  Users: state.UsersLanding
+  Users: state.Users
 });
 
 const mapDispatchToProps = dispatch => ({});

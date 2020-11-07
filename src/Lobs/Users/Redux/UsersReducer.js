@@ -1,16 +1,17 @@
-import { act } from 'react-test-renderer';
-import {UsersActionTypes} from '../UsersConstants';
+import {STATE_LOADING} from '../UsersConstants';
 
 const initialState = {
-  UsersDataObject: {}
+  UsersDto: "Data"
 };
 
-const UsersLanding = (state = initialState, action) => {
-  const UserActionState = {
-    [UsersActionTypes.STATE_LOADING]: {...state}
-  };
-
-  return state; //action.type in UserActionState ? UserActionState[action.type] : 
+const UsersReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case STATE_LOADING: 
+      return {
+        ...state,
+      }
+    default: return state
+  }
 }
 
-export default UsersLanding;
+export default UsersReducer;

@@ -14,7 +14,6 @@ const AppRouter = () => {
 					<Scene 
 						key="usersLanding"
 						component={UsersLanding}
-						title="Users"
 						initial
 					/>
 				</Stack>
