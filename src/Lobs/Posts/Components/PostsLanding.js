@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import {View, ActivityIndicator} from 'react-native';
-import {Actions} from 'react-native-router-flux';
-import {MainContainer, LandingLoader} from './UsersCss';
+import {MainContainer, LandingLoader} from './PostCss';
 
-import UserList from './UserList';
+import User from '../../Common/User';
+import PostList from './PostList';
 
-class UsersLanding extends Component {
+class PostsLanding extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   componentDidMount() {
-    this.props.fetchUsers();
+    this.props.fetchPosts(this.props.user.id);
   }
 
   render() {
@@ -30,16 +31,11 @@ class UsersLanding extends Component {
   );
 
   renderContent = () => (
-    <UserList users={this.props.users} onPress={this.userCardOnPress} />
+    <>
+      <User card={this.props.user} />
+      <PostList posts={this.props.posts} />
+    </>
   );
-
-  userCardOnPress = (card) => {
-    console.log(card);
-    console.log(Actions.currentScene);
-    Actions.postsLanding({
-      user: card
-    });
-  }
 }
 
-export default UsersLanding;
+export default PostsLanding;

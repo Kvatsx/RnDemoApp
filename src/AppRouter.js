@@ -5,6 +5,7 @@ import store from './ReduxStore';
 
 // Lobs Containers
 import UsersLanding from './Lobs/Users/Redux/UsersContainer';
+import PostsLanding from './Lobs/Posts/Redux/PostsContainer';
 
 const AppRouter = () => {
 	return (
@@ -15,6 +16,10 @@ const AppRouter = () => {
 						key="usersLanding"
 						component={UsersLanding}
 						initial
+					/>
+					<Scene 
+						key="postsLanding"
+						component={PostsLanding}
 					/>
 				</Stack>
 			</Router>

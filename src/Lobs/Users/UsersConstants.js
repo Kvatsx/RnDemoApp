@@ -1,5 +1,5 @@
-export const LOADING = 'LOADING';
-export const ERROR = 'ERROR';
-export const SUCCESS = 'SUCCESS';
+export const LOADING = 'USERS_LOADING';
+export const ERROR = 'USERS_ERROR';
+export const SUCCESS = 'USERS_SUCCESS';
 
 export const PageName = 'UsersLanding';
